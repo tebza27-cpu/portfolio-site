@@ -1,50 +1,65 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="card">
-<h1>BYU Pathway Studies</h1>
-<p>Pursuing <strong>Bachelor's Degree in Information Technology</strong></p>
+<div class="byu-hero">
+    <div class="byu-hero-copy">
+        <p class="eyebrow">BYU Pathway Studies</p>
+        <h1>Study progress for the Information Technology degree</h1>
+        <p>Organized by certificate track, current enrollment, and next block planning so employers can quickly see progress and readiness for IT roles.</p>
+    </div>
+</div>
 
-<h2>Completed Certificates</h2>
+<div class="byu-grid">
+    <div class="byu-card">
+        <h2>Completed Certificate</h2>
+        <h3>Technical Support Engineer</h3>
+        <p>This certificate is designed to develop practical IT support skills in computer applications, hardware, desktop support, programming, and networking.</p>
+        <ul>
+            <li><a href="/course/pc-hardware">PC Hardware Technician</a></li>
+            <li><a href="/course/networking-fundamentals">Networking Fundamentals</a></li>
+            <li><a href="/course/cloud-server">Cloud Server Administration</a></li>
+            <li><a href="/course/intro-it">Introduction to Information Technology</a></li>
+            <li><a href="/course/applied-programming">Foundations of Applied Programming</a></li>
+        </ul>
+        <p class="status">All 5 courses completed</p>
+    </div>
 
-<h3>✓ Technical Support Engineer Certificate</h3>
-<ul>
-  <li><a href="/course/pc-hardware">PC Hardware Technician</a></li>
-  <li><a href="/course/networking-fundamentals">Networking Fundamentals</a></li>
-  <li><a href="/course/cloud-server">Cloud Server Administration</a></li>
-  <li><a href="/course/intro-it">Introduction to Information Technology</a></li>
-  <li><a href="/course/applied-programming">Foundations of Applied Programming</a></li>
-</ul>
-<p><em>All 5 courses completed</em></p>
+    <div class="byu-card">
+        <h2>Current Focus</h2>
+        <h3>IT Professional Certificate</h3>
+        <p>This certificate deepens professional IT knowledge with advanced courses in databases, Linux, cloud computing, networking, and cybersecurity.</p>
+        <ul>
+            <li>✓ <a href="/course/database-design">Database Design and Analysis</a></li>
+            <li>✓ <a href="/course/linux-fundamentals">Linux Fundamentals</a></li>
+            <li>✓ <a href="/course/cloud-computing">Cloud Computing Essentials</a></li>
+            <li>✓ <a href="/course/network-config">Network Configuration & Design</a></li>
+            <li>→ <a href="/course/cybersecurity-foundations">Cybersecurity Foundations</a> (Currently taking)</li>
+        </ul>
+        <p class="status">4 of 5 courses complete</p>
+    </div>
 
-<hr>
+    <div class="byu-card">
+        <h2>Next Certification</h2>
+        <h3>System Administration Certificate</h3>
+        <p>This certificate builds foundational server and network administration skills for entry-level sysadmin positions and internships.</p>
+        <p class="subheader">Current block</p>
+        <ul>
+            <li><a href="/course/business-intelligence">Business Intelligence Systems</a></li>
+            <li><a href="/course/advanced-linux">Advanced Linux</a></li>
+        </ul>
+        <p class="subheader">Next block</p>
+        <ul>
+            <li><a href="/course/scripting-security">Scripting for Security Operations</a></li>
+            <li><a href="/course/azure-tech">Azure Technologies</a></li>
+            <li><a href="/course/aws-practitioner">AWS Cloud Practitioner</a></li>
+        </ul>
+        <p class="status">2 of 5 courses complete</p>
+    </div>
+</div>
 
-<h2>In Progress Certificates</h2>
-
-<h3>IT Professional Certificate (4/5 Completed)</h3>
-<ul>
-  <li>✓ <a href="/course/database-design">Database Design and Analysis</a></li>
-  <li>✓ <a href="/course/linux-fundamentals">Linux Fundamentals</a></li>
-  <li>✓ <a href="/course/cloud-computing">Cloud Computing Essentials</a></li>
-  <li>✓ <a href="/course/network-config">Network Configuration & Design</a></li>
-  <li>→ <a href="/course/cybersecurity-foundations">Cybersecurity Foundations</a> (Currently taking)</li>
-</ul>
-
-<h3>System Administration Certificate (2/4 Completed)</h3>
-<p><strong>Currently Enrolled:</strong></p>
-<ul>
-  <li><a href="/course/business-intelligence">Business Intelligence Systems</a></li>
-  <li><a href="/course/advanced-linux">Advanced Linux</a></li>
-</ul>
-<p><strong>Next Block (To Complete Certificate):</strong></p>
-<ul>
-  <li><a href="/course/scripting-security">Scripting for Security Operations</a></li>
-  <li><a href="/course/azure-tech">Azure Technologies</a></li>
-  <li><a href="/course/aws-practitioner">AWS Cloud Practitioner</a></li>
-</ul>
-
-<p><strong>Progress:</strong> 2/5 courses completed</p>
-
+<div class="byu-card byu-callout">
+    <h2>Degree Progress</h2>
+    <p>The Bachelor of Applied Science in Information Technology is built from a combination of these certificates and additional coursework. This page highlights the path, completed work, and the remaining courses needed to support a strong IT career foundation.</p>
 </div>
 
 {% endblock %}
