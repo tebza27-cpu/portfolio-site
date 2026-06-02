@@ -51,7 +51,7 @@
 Practical coursework from my BYU Pathway IT journey, organized by course and weekly progression. Click on a folder to expand it.
 </p>
 
-{% if no_files and project_links %}
+{% if project_links %}
 <div class="card" style="margin-bottom:16px;">
     <h2>Course Project Summaries</h2>
     <p>These courses are available as shared OneDrive resources.</p>
@@ -64,7 +64,6 @@ Practical coursework from my BYU Pathway IT journey, organized by course and wee
         </div>
     {% endfor %}
 </div>
-{% endif %}
 {% endif %}
 
 {% for course in courses %}
