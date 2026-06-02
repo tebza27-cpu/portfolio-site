@@ -1,8 +1,10 @@
 from flask import Flask, render_template, send_file, abort, request
 from pathlib import Path
 import os
+from messaging import get_messaging_service
 
 app = Flask(__name__)
+
 
 # -------- HELPER FUNCTIONS --------
 def is_local_access():
@@ -179,9 +181,50 @@ def skills():
 def timeline():
     return render_template('timeline.html')
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html')
+    sent = False
+    confirmation = None
+    chat_message = None
+    error = None
+
+    if request.method == 'POST':
+        name = request.form.get('name', '').strip()
+        email = request.form.get('email', '').strip()
+        message = request.form.get('message', '').strip()
+        channel = request.form.get('channel', 'WhatsApp')
+
+        if message:
+            chat_message = {
+                'name': name or 'Guest',
+                'email': email or 'tebza27@gmail.com',
+                'message': message,
+                'channel': channel
+            }
+
+            # Attempt to send via selected channel
+            messaging = get_messaging_service()
+            result = None
+
+            if channel == 'WhatsApp':
+                result = messaging.send_whatsapp(chat_message['name'], chat_message['email'], message)
+            elif channel == 'Google Hangouts':
+                result = messaging.send_google_chat(chat_message['name'], chat_message['email'], message)
+            elif channel == 'Email':
+                result = messaging.send_email(chat_message['name'], chat_message['email'], message)
+
+            if result and result.get('success'):
+                sent = True
+                confirmation = f"✓ Message sent via {channel}! You'll receive a response shortly."
+            else:
+                error = result.get('error', 'Failed to send message.') if result else 'Unknown error.'
+                confirmation = f"Message saved locally. {error}"
+        else:
+            error = 'Please enter a message before sending.'
+            confirmation = error
+
+    return render_template('contact.html', sent=sent, confirmation=confirmation, chat_message=chat_message, error=error)
+
 
 # ---------------- COURSE DETAILS ----------------
 @app.route('/course/<course_id>')

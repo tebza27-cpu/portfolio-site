@@ -10,7 +10,62 @@ nav { background:#1f2937; padding:15px; }
 nav a { color:white; margin:10px; text-decoration:none; }
 .container { padding:20px; }
 .card { background:white; padding:20px; margin-bottom:20px; }
-.btn { background:#38bdf8; color:white; padding:10px; text-decoration:none; border-radius:5px; }
+.btn { background:#38bdf8; color:white; padding:10px; text-decoration:none; border-radius:5px; display: inline-block; margin-right: 10px; margin-bottom: 10px; }
+
+.contact-form {
+    display: grid;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: #334155;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.chat-box {
+    background: #eef2ff;
+    border-left: 4px solid #6366f1;
+    padding: 16px;
+    margin-top: 18px;
+    border-radius: 10px;
+}
+
+.chat-box.chat-success {
+    background: #f0fdf4;
+    border-left-color: #16a34a;
+}
+
+.chat-box.chat-success p {
+    color: #166534;
+}
+
+.chat-box.chat-error {
+    background: #fef2f2;
+    border-left-color: #dc2626;
+}
+
+.chat-box.chat-error p {
+    color: #7f1d1d;
+}
+
+.chat-entry {
+    background: white;
+    border: 1px solid #dbeafe;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 12px;
+}
 
 a {
     text-decoration: none;
