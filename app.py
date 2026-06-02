@@ -161,10 +161,6 @@ def support():
 def byu():
     return render_template('byu.html')
 
-@app.route('/academic')
-def academic():
-    return render_template('academic.html')
-
 @app.route('/cloud')
 def cloud():
     return render_template('cloud.html')
