@@ -35,7 +35,7 @@ COURSES = {
         "description": "Introduction to networking concepts, protocols, and network infrastructure basics.",
         "url": "https://www.byupathway.edu",
         "local_folder": "IT255 Networking Fundamentals",
-        "onedrive_link": ""  # Add your OneDrive share link here
+        "onedrive_link": "https://byupathwayworldwideprod-my.sharepoint.com/:f:/g/personal/smokhele_byupathway_edu/IgCcpZTs2DfEQq-U3GqvZQghAReSYi_TGOtGwIr-AzdsKSI?e=y8NghJ"
     },
     "cloud-server": {
         "title": "Cloud Server Administration",
@@ -56,7 +56,7 @@ COURSES = {
     "applied-programming": {
         "title": "Foundations of Applied Programming",
         "certificate": "Technical Support Engineer",
-        "description": "Introduction to programming fundamentals and software development principles.",
+        "description": "Introduction to programming fundamentals and software development principles, with Python as the main language.",
         "url": "https://www.byupathway.edu",
         "local_folder": "CS104 Foundations of Applied Programming",
         "onedrive_link": "https://byupathwayworldwideprod-my.sharepoint.com/:f:/g/personal/smokhele_byupathway_edu/IgCKPC7nHTdzR7HjE7DKILvjAaqeCiO75vZojPBQkm2qTUI?e=kuNrwn"
@@ -91,7 +91,7 @@ COURSES = {
         "description": "Network design, configuration, and best practices for enterprise networks.",
         "url": "https://www.byupathway.edu",
         "local_folder": "IT 350 Network Configuration & Design",
-        "onedrive_link": ""  # Add your OneDrive share link here
+        "onedrive_link": "https://byupathwayworldwideprod-my.sharepoint.com/:f:/g/personal/smokhele_byupathway_edu/IgDe-H6FSybYRY7ZSASunPGnAV-HzZ1AA2RfXrN83thrJcg?e=yg1Fe5"
     },
     "cybersecurity-foundations": {
         "title": "Cybersecurity Foundations",
