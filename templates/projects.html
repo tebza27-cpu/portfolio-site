@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .collapsible {
+        cursor: pointer;
+        user-select: none;
+        padding: 10px;
+        margin: 5px 0;
+        background: #f0f0f0;
+        border-left: 4px solid #38bdf8;
+        border-radius: 3px;
+        transition: background-color 0.2s;
+    }
+    .collapsible:hover {
+        background: #e8e8e8;
+    }
+    .collapsible::before {
+        content: '▶ ';
+        display: inline-block;
+        margin-right: 8px;
+        transition: transform 0.3s;
+    }
+    .collapsible.active::before {
+        transform: rotate(90deg);
+    }
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        padding: 0 10px;
+    }
+    .content.show {
+        max-height: 2000px;
+        padding: 10px;
+    }
+    .file-list {
+        list-style: none;
+        padding-left: 20px;
+    }
+    .file-list li {
+        padding: 4px 0;
+    }
+</style>
+
+<div class="card">
+
+<h1>Projects Portfolio</h1>
+
+<p>
+Practical coursework from my BYU Pathway IT journey, organized by course and weekly progression. Click on a folder to expand it.
+</p>
+
+{% for course in courses %}
+
+<div class="card">
+    <div class="collapsible" onclick="toggleCollapsible(this)">📂 {{ course.course }}</div>
+    
+    <div class="content">
+        {% for week in course.weeks %}
+            <div class="collapsible" onclick="toggleCollapsible(this)">📁 {{ week.week }}</div>
+            
+            <div class="content">
+                <ul class="file-list">
+                    {% for file in week.files %}
+
+                        {% if file.type == "docx" %}
+                            <li>📄 {{ file.name }}</li>
+
+                        {% elif file.type == "pdf" %}
+                            <li>📘 {{ file.name }}</li>
+
+                        {% elif file.type in ["xlsx", "xls"] %}
+                            <li>📊 {{ file.name }}</li>
+
+                        {% elif file.type == "sql" %}
+                            <li>🗄️ {{ file.name }}</li>
+
+                        {% elif file.type in ["py", "sh"] %}
+                            <li>🐍 {{ file.name }}</li>
+
+                        {% elif file.type in ["pkt"] %}
+                            <li>🌐 {{ file.name }}</li>
+
+                        {% elif file.type in ["png", "jpg", "jpeg", "gif"] %}
+                            <li>🖼️ {{ file.name }}</li>
+
+                        {% else %}
+                            <li>📁 {{ file.name }}</li>
+
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endfor %}
+
+{% if recordings_by_course %}
+<div class="card">
+    <div class="collapsible" onclick="toggleCollapsible(this)">🎬 Project Recordings</div>
+    
+    <div class="content">
+        <p>Video submissions for the course projects, linked from your BYU OneDrive Recordings folder.</p>
+        
+        {% for course_name, recordings in recordings_by_course.items() | sort %}
+            <div class="collapsible" onclick="toggleCollapsible(this)">{{ course_name }}</div>
+            
+            <div class="content">
+                <ul class="file-list">
+                    {% for rec in recordings %}
+                        <li>
+                            {% if rec.type == 'mp4' %}
+                                🎥
+                            {% else %}
+                                🔗
+                            {% endif %}
+                            <a href="{{ rec.url }}" target="_blank" rel="noopener">{{ rec.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+</div>
+
+<script>
+    function toggleCollapsible(element) {
+        element.classList.toggle('active');
+        const content = element.nextElementSibling;
+        if (content && content.classList.contains('content')) {
+            content.classList.toggle('show');
+        }
+    }
+</script>
+
+{% endblock %}

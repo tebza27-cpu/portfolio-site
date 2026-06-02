@@ -1,0 +1,70 @@
+
+body { font-family: Arial; background:#f4f6f8; margin:0; }
+nav { background:#1f2937; padding:15px; }
+nav a { color:white; margin:10px; text-decoration:none; }
+.container { padding:20px; }
+.card { background:white; padding:20px; margin-bottom:20px; }
+.btn { background:#38bdf8; color:white; padding:10px; text-decoration:none; border-radius:5px; }
+
+a {
+    text-decoration: none;
+    color: #464feb;
+}
+
+tr th, tr td {
+    border: 1px solid #e6e6e6;
+}
+
+tr th {
+    background-color: #f5f5f5;
+}
+
+/* Collapsible styles */
+.collapsible {
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    margin: 5px 0;
+    background: #f0f0f0;
+    border-left: 4px solid #38bdf8;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+
+.collapsible:hover {
+    background: #e8e8e8;
+}
+
+.collapsible::before {
+    content: '▶ ';
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.3s;
+}
+
+.collapsible.active::before {
+    transform: rotate(90deg);
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 10px;
+}
+
+.content.show {
+    max-height: 2000px;
+    padding: 10px;
+}
+
+.file-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.file-list li {
+    padding: 4px 0;
+}
+
