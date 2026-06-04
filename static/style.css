@@ -403,3 +403,12 @@ nav a.active {
 .contact-box p {
     margin: 0;
 }
+
+.contact-box a {
+    color: #2B5C8A;
+    font-weight: 500;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
