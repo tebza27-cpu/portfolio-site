@@ -173,7 +173,7 @@ a {
 
 .certification-diagram {
     display: grid;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     margin: 28px 0;
 }
@@ -189,14 +189,16 @@ a {
     box-shadow: 0 24px 55px rgba(15, 23, 42, 0.12);
 }
 
+
 .diagram-node {
     background: white;
     border: 1px solid #dbeafe;
     border-radius: 18px;
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
     padding: 24px;
-    position: relative;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 220px;   /* ✅ keeps cards aligned */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .diagram-node h3 {
