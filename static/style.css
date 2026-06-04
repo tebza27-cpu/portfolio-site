@@ -353,3 +353,22 @@ tr th {
     padding: 4px 0;
 }
 
+nav a.active {
+    color: #00C853;
+    font-weight: bold;
+    border-bottom: 2px solid #00C853;
+}
+
+.container {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background-color: #E6EEF6;  /* soft pale blue */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #1f2937;  /* dark text for contrast */
+}
