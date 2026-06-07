@@ -145,7 +145,7 @@ COURSES = {
         "onedrive_link": "https://byupathwayworldwideprod-my.sharepoint.com/:f:/g/personal/smokhele_byupathway_edu/IgBbUVpk1e3tRYhHHvJlM3C1AUYMZLzHptx1ATb5wmqtqeY?e=3IB9pF"
     },
     "networking-fundamentals": {
-        "title": "IT 255 Networking Fundamentals",
+        "title": "Networking Fundamentals",
         "certificate": "Information Technology",
         "description": "Networking fundamentals, protocols, and infrastructure design.",
         "url": "https://www.byupathway.edu",
