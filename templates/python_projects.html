@@ -1,40 +1,57 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-  <h1>Python Projects (CS104)</h1>
-  <p>Place CS104 Python files in the <strong>python_programs/</strong> folder. Click <strong>Run</strong> to execute them on the server (read-only sandbox with limited timeout).</p>
+<div class="container python-projects-page">
+  <div class="page-hero">
+    <div>
+      <span class="eyebrow">Python Projects</span>
+      <h1>CS104 Python Project Runner</h1>
+      <p class="hero-copy">Place your CS104 Python project files in the <code>python_programs/</code> folder, then click the <strong>Run</strong> button for the project you want to execute.</p>
+    </div>
+  </div>
 
-  <h2>Local Programs</h2>
-  {% if files %}
-    <ul>
-      {% for f in files %}
-      <li>
-        <strong>{{ f.name }}</strong>
-        <button class="run-btn" data-fname="{{ f.name }}">Run</button>
-        <pre class="output" id="out-{{ loop.index0 }}" style="background:#111;color:#dff;padding:10px;display:none;white-space:pre-wrap;"></pre>
-      </li>
+  <section class="project-list">
+    <h2>Available Python Projects</h2>
+    {% if files %}
+      <div class="project-grid">
+        {% for f in files %}
+        <article class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3>{{ f.display_name }}</h3>
+              <p class="project-file-name">{{ f.name }}</p>
+            </div>
+            <button class="run-btn" data-fname="{{ f.name }}">Run</button>
+          </div>
+          <div class="output-box" id="out-{{ loop.index0 }}" aria-live="polite"></div>
+        </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state">
+        <p>No local Python projects were found in <code>python_programs/</code>. Add one or more <code>.py</code> files and refresh this page.</p>
+      </div>
+    {% endif %}
+  </section>
+
+  <section class="onedrive-links">
+    <h2>OneDrive Course Sources</h2>
+    <p>These folders contain course resources you can view in OneDrive.</p>
+    <div class="link-grid">
+      {% for link in onedrive_links %}
+        <a class="link-card" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
       {% endfor %}
-    </ul>
-  {% else %}
-    <p>No local Python files found in <code>python_programs/</code>. Add them and refresh.</p>
-  {% endif %}
-
-  <h2>OneDrive Sources</h2>
-  <ul>
-    {% for link in onedrive_links %}
-      <li><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>
-    {% endfor %}
-  </ul>
+    </div>
+  </section>
 </div>
 
 <script>
 document.addEventListener('click', async (e) => {
   if (e.target.classList.contains('run-btn')) {
     const fname = e.target.dataset.fname;
-    const li = e.target.closest('li');
-    const out = li.querySelector('.output');
-    out.style.display = 'block';
+    const card = e.target.closest('.project-card');
+    const out = card.querySelector('.output-box');
+    out.classList.add('active');
     out.textContent = 'Running...';
 
     try {

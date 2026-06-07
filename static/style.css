@@ -12,6 +12,122 @@ nav a { color:white; margin:10px; text-decoration:none; }
 .card { background:white; padding:20px; margin-bottom:20px; }
 .btn { background:#38bdf8; color:white; padding:10px; text-decoration:none; border-radius:5px; display: inline-block; margin-right: 10px; margin-bottom: 10px; }
 
+.python-projects-page {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.python-projects-page .page-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+    padding: 32px;
+    border-radius: 18px;
+    margin-bottom: 28px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.15);
+}
+.python-projects-page .page-hero .eyebrow {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.82rem;
+    margin-bottom: 12px;
+    color: #38bdf8;
+}
+.python-projects-page .page-hero h1 {
+    margin: 0 0 12px;
+    font-size: 2.5rem;
+    line-height: 1.05;
+}
+.python-projects-page .hero-copy {
+    max-width: 760px;
+    color: #cbd5e1;
+    font-size: 1.05rem;
+}
+.python-projects-page .project-list h2,
+.python-projects-page .onedrive-links h2 {
+    color: #0f172a;
+    margin-bottom: 16px;
+}
+.python-projects-page .project-grid {
+    display: grid;
+    gap: 18px;
+}
+.python-projects-page .project-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+.python-projects-page .project-card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.python-projects-page .project-card h3 {
+    margin: 0 0 6px;
+    font-size: 1.25rem;
+    color: #0f172a;
+}
+.python-projects-page .project-file-name {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+.python-projects-page .run-btn {
+    background: #2563eb;
+    border: none;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.18s ease, background 0.18s ease;
+}
+.python-projects-page .run-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+.python-projects-page .output-box {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-radius: 14px;
+    padding: 18px;
+    min-height: 90px;
+    white-space: pre-wrap;
+    font-family: "Courier New", Courier, monospace;
+    display: none;
+}
+.python-projects-page .output-box.active {
+    display: block;
+}
+.python-projects-page .empty-state {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    padding: 24px;
+}
+.python-projects-page .onedrive-links .link-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.python-projects-page .link-card {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 18px 20px;
+    border-radius: 16px;
+    color: #0f172a;
+    font-weight: 600;
+    transition: transform 0.18s ease, border-color 0.18s ease;
+}
+.python-projects-page .link-card:hover {
+    transform: translateY(-2px);
+    border-color: #93c5fd;
+}
+
 .contact-form {
     display: grid;
     gap: 12px;

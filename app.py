@@ -509,8 +509,11 @@ def python_projects():
                 continue
             fpath = os.path.join(local_folder, fname)
             if os.path.isfile(fpath) and fname.lower().endswith('.py'):
+                clean_name = os.path.splitext(fname)[0]
+                clean_display = clean_name.replace('_', ' ').replace('-', ' ').title()
                 files.append({
                     'name': fname,
+                    'display_name': clean_display,
                     'path': fpath
                 })
 
