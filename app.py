@@ -141,12 +141,12 @@ COURSES = {
         "local_folder": "IT 370 Advanced Linux",
         "onedrive_link": "https://byupathwayworldwideprod-my.sharepoint.com/:f:/g/personal/smokhele_byupathway_edu/IgBbUVpk1e3tRYhHHvJlM3C1AUYMZLzHptx1ATb5wmqtqeY?e=3IB9pF"
     },
-    "byu-general": {
-        "title": "BYU Pathway Worldwide",
+    "networking-fundamentals": {
+        "title": "IT 255 Networking Fundamentals",
         "certificate": "Information Technology",
-        "description": "General BYU Pathway resources and materials.",
+        "description": "Networking fundamentals, protocols, and infrastructure design.",
         "url": "https://www.byupathway.edu",
-        "onedrive_link": "https://byupathwayworldwideprod-my.sharepoint.com/:f:/g/personal/smokhele_byupathway_edu/IgBq0IqXUsPcTrfkxRDZRe0uAVDhFqPp4bKTZSy2WbbZuxA?e=7eoeWT"
+        "onedrive_link": "https://byupathwayworldwideprod-my.sharepoint.com/:f:/g/personal/smokhele_byupathway_edu/IgCcpZTs2DfEQq-U3GqvZQghAReSYi_TGOtGwIr-AzdsKSI?e=7xvZ6Z"
     },
     "scripting-security": {
         "title": "Scripting for Security Operations",
